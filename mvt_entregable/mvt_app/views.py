@@ -1,21 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from mvt_app.models import familia
+from mvt_app.models import Familia
 
 def familia(request):
     context= {}
-    context["familiares"]= familia.objects.all()
+    context["familiares"]= Familia.objects.all()
     
     return render(request,'mvt_app/familia.html', context)
 
 def mostrar_edad(request):
     context= {}
-    context["edades"]= familia.objects.edad()
+    context["edades"]= Familia.objects.edad()
 
     return render(request,'mvt_app/edad.html', context)
 
 def mostrar_nombre(request):
     context= {}
-    context["nombres"]= familia.objects.nombre()
+    context["nombres"]= Familia.objects.nombre()
 
     return render(request, 'mvt_app/nombre.html', context)   
